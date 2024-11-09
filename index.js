@@ -119,7 +119,7 @@ replyBtn.forEach((btn, index) => {
 		inputBoxes[index].classList.add("flex");
 		const textInput = inputBoxes[index].querySelector("textarea");
 		btn.disabled = true;
-		console.log(replyBtn.disabled);
+		console.log(index);
 		const replyButton = inputBoxes[index].querySelector("input[type='button']");
 		replyButton.addEventListener("click", (e) => {
 			e.preventDefault();
