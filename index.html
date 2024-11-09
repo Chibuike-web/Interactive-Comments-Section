@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Interactive comments section</title>
+		<link rel="stylesheet" href="./dist/output.css" />
+		<script src="index.js" defer></script>
+	</head>
+	<body class="bg-veryLightGray flex flex-col items-center justify-center min-h-screen m-16">
+		<!-- Wrapper -->
+		<div class="flex flex-col gap-[24px] w-full max-w-[731px]">
+			<!-- Comment 1 -->
+			<div class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px]">
+				<!-- Stepper -->
+				<div
+					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+				>
+					<div id="increase" class="increase-btn">
+						<svg
+							width="11"
+							height="11"
+							viewBox="0 0 11 11"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+					<p class="text-moderateBlue font-medium">12</p>
+					<div id="decrease" class="decrease-btn">
+						<svg width="12" height="4" viewBox="0 0 12 4" fill="none">
+							<path
+								d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+				</div>
+				<!-- Contents -->
+				<div class="flex flex-col gap-[10px]">
+					<!-- Row - 1 -->
+					<div class="flex flex-row items-center justify-between w-full">
+						<!-- Left container -->
+						<div class="flex gap-4 items-center">
+							<div class="flex gap-4 items-center">
+								<img src="./images/avatars/Image 1.png" alt="" class="w-full max-w-[32px]" />
+								<h3 class="font-medium text-darkBlue">amyrobson</h3>
+							</div>
+							<p class="text-grayishBlue">1 month ago</p>
+						</div>
+						<!-- Reply button) -->
+						<button class="reply-btn flex flex-row gap-2 items-center cursor-pointer">
+							<svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+								<path
+									d="M0.243408 5.1485L5.40019 0.67281C5.50227 0.584712 5.62733 0.527863 5.76055 0.508996C5.89378 0.490128 6.0296 0.510032 6.15192 0.56635C6.27424 0.622669 6.37794 0.713042 6.45074 0.826768C6.52354 0.940494 6.56239 1.07281 6.56269 1.20804V3.56543C11.2684 3.61927 15.0002 4.56696 15.0002 9.0502C15.0002 10.8594 13.8409 12.6514 12.5584 13.5884C12.1588 13.8813 11.5888 13.513 11.7366 13.0391C13.0652 8.7702 11.1066 7.6362 6.56269 7.5705V10.1594C6.56269 10.769 5.85126 11.0856 5.40019 10.6936L0.243408 6.21896C0.167157 6.15255 0.106004 6.07043 0.0640916 5.97817C0.0221794 5.88592 0.000488281 5.78569 0.000488281 5.68427C0.000488281 5.58286 0.0221794 5.48262 0.0640916 5.39037C0.106004 5.29812 0.167157 5.21492 0.243408 5.1485Z"
+									fill="#5457B6"
+								/>
+							</svg>
+							<h3 class="text-moderateBlue font-medium">Reply</h3>
+						</button>
+					</div>
+					<!-- Row - 2 -->
+					<div class="w-full">
+						<p class="text-grayishBlue leading-[1.6em]">
+							Impressive! Though it seems the drag feature could be improved. But overall it looks
+							incredible. You ‘ve nailed the design and the responsiveness at various breakpoints
+							works really well.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- my-comment -->
+			<div id="first-comment" class="hidden w-full items-start gap-6 bg-white p-6 rounded-[12px]">
+				<!-- Stepper -->
+				<div
+					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+				>
+					<div id="increase" class="increase-btn">
+						<svg width="11" height="11" viewBox="0 0 11 11">
+							<path
+								d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+					<p class="text-moderateBlue font-medium">12</p>
+					<div id="decrease" class="decrease-btn">
+						<svg width="12" height="4" viewBox="0 0 12 4">
+							<path
+								d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+				</div>
+				<!-- Contents -->
+				<div class="flex flex-col gap-[10px] w-full">
+					<!-- Row - 1 -->
+					<div class="flex flex-row items-center justify-between w-full">
+						<!-- Left container -->
+						<div class="flex gap-4 items-center">
+							<div class="flex gap-4 items-center">
+								<img src="./images/avatars/Image 4.png" alt="" class="w-full max-w-[32px]" />
+								<h3 class="font-medium text-darkBlue">amyrobson</h3>
+							</div>
+							<!-- you -->
+							<div
+								class="text-white bg-moderateBlue rounded-[2px] leading-[1em] font-medium px-[6px] py-[4px]"
+							>
+								you
+							</div>
+							<p class="text-grayishBlue">2 days ago</p>
+						</div>
+						<!-- User -->
+						<!-- Right content (Delete and Edit button) -->
+						<div id="action-btn" class="flex flex-row gap-6 items-center">
+							<button id="delete-btn" class="flex flex-row gap-2 items-center cursor-pointer">
+								<img src="./images/icon-delete.svg" alt="" srcset="" />
+								<p class="text-softRed font-medium">Delete</p>
+							</button>
+							<button class="edit-btn flex flex-row gap-2 items-center cursor-pointer">
+								<img src="./images/icon-edit.svg" alt="edit" />
+								<p class="text-moderateBlue font-medium">Edit</p>
+							</button>
+						</div>
+					</div>
+					<!-- Row - 2 -->
+					<div class="comment-container w-full flex break-words">
+						<p class="my-comment text-grayishBlue leading-[1.6em] w-full break-all">
+							<span class="text-moderateBlue font-medium">@ramsesmiron</span>
+							I couldn’t agree more with this. Everything moves so fast and it always seems like
+							everyone knows the newset library/framework. But the fundamentals are what stay
+							constant.
+						</p>
+					</div>
+					<input
+						type="button"
+						value="UPDATE"
+						class="update-btn hidden ml-auto px-[28px] py-[14px] text-white bg-moderateBlue rounded-[8px] font-medium cursor-pointer"
+					/>
+				</div>
+			</div>
+
+			<!-- Input box (for replies) -->
+			<div
+				class="input-box hidden bg-white w-full py-6 px-6 rounded-[12px] gap-4 flex-row items-start justify-between"
+			>
+				<div class="max-w-10">
+					<img src="./images/avatars/Image 4.png" alt="" class="w-full" />
+				</div>
+				<div class="w-full">
+					<textarea
+						name=""
+						id=""
+						placeholder="Add a comment...."
+						class="w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]"
+					></textarea>
+				</div>
+				<div>
+					<input
+						type="button"
+						value="REPLY"
+						class="cursor-pointer bg-moderateBlue text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+					/>
+				</div>
+			</div>
+
+			<!-- Comment 2 -->
+			<div class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px]">
+				<!-- Stepper -->
+				<div
+					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+				>
+					<div id="increase" class="increase-btn">
+						<svg
+							width="11"
+							height="11"
+							viewBox="0 0 11 11"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+					<p class="text-moderateBlue font-medium">5</p>
+					<div id="decrease" class="decrease-btn">
+						<svg width="12" height="4" viewBox="0 0 12 4" fill="none">
+							<path
+								d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+				</div>
+				<!-- Contents -->
+				<div class="flex flex-col gap-[10px]">
+					<!-- Row - 1 -->
+					<div class="flex flex-row items-center justify-between w-full">
+						<!-- Left container -->
+						<div class="flex gap-4 items-center">
+							<div class="flex gap-4 items-center">
+								<img src="./images/avatars/Image 2.png" alt="" class="w-full max-w-[32px]" />
+								<h3 class="font-medium text-darkBlue">maxblagun</h3>
+							</div>
+							<p class="text-grayishBlue">2 weeks ago</p>
+						</div>
+						<!-- Right content (Reply button) -->
+						<button class="reply-btn flex flex-row gap-2 items-center cursor-pointer">
+							<svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+								<path
+									d="M0.243408 5.1485L5.40019 0.67281C5.50227 0.584712 5.62733 0.527863 5.76055 0.508996C5.89378 0.490128 6.0296 0.510032 6.15192 0.56635C6.27424 0.622669 6.37794 0.713042 6.45074 0.826768C6.52354 0.940494 6.56239 1.07281 6.56269 1.20804V3.56543C11.2684 3.61927 15.0002 4.56696 15.0002 9.0502C15.0002 10.8594 13.8409 12.6514 12.5584 13.5884C12.1588 13.8813 11.5888 13.513 11.7366 13.0391C13.0652 8.7702 11.1066 7.6362 6.56269 7.5705V10.1594C6.56269 10.769 5.85126 11.0856 5.40019 10.6936L0.243408 6.21896C0.167157 6.15255 0.106004 6.07043 0.0640916 5.97817C0.0221794 5.88592 0.000488281 5.78569 0.000488281 5.68427C0.000488281 5.58286 0.0221794 5.48262 0.0640916 5.39037C0.106004 5.29812 0.167157 5.21492 0.243408 5.1485Z"
+									fill="#5457B6"
+								/>
+							</svg>
+							<h3 class="text-moderateBlue font-medium">Reply</h3>
+						</button>
+					</div>
+
+					<!-- Row - 2 -->
+					<div class="w-full">
+						<p class="text-grayishBlue leading-[1.6em]">
+							Woah, your project looks awesome! How long have you been coding for? I’m still new,
+							but think I want dive into React as well soon. Perhaps you can give me an insights on
+							where I can learn React? Thanks!
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- my-comment -->
+			<div id="second-comment" class="hidden w-full items-start gap-6 bg-white p-6 rounded-[12px]">
+				<!-- Stepper -->
+				<div
+					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+				>
+					<div id="increase" class="increase-btn">
+						<svg width="11" height="11" viewBox="0 0 11 11">
+							<path
+								d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+					<p class="text-moderateBlue font-medium">12</p>
+					<div id="decrease" class="decrease-btn">
+						<svg width="12" height="4" viewBox="0 0 12 4">
+							<path
+								d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+								fill="#C5C6EF"
+							/>
+						</svg>
+					</div>
+				</div>
+				<!-- Contents -->
+				<div class="flex flex-col gap-[10px] w-full">
+					<!-- Row - 1 -->
+					<div class="flex flex-row items-center justify-between w-full">
+						<!-- Left container -->
+						<div class="flex gap-4 items-center">
+							<div class="flex gap-4 items-center">
+								<img src="./images/avatars/Image 4.png" alt="" class="w-full max-w-[32px]" />
+								<h3 class="font-medium text-darkBlue">amyrobson</h3>
+							</div>
+							<!-- you -->
+							<div
+								class="text-white bg-moderateBlue rounded-[2px] leading-[1em] font-medium px-[6px] py-[4px]"
+							>
+								you
+							</div>
+							<p class="text-grayishBlue">2 days ago</p>
+						</div>
+						<!-- User -->
+						<!-- Right content (Delete and Edit button) -->
+						<div id="action-btn" class="flex flex-row gap-6 items-center">
+							<button id="delete-btn" class="flex flex-row gap-2 items-center cursor-pointer">
+								<img src="./images/icon-delete.svg" alt="" srcset="" />
+								<p class="text-softRed font-medium">Delete</p>
+							</button>
+							<button class="edit-btn flex flex-row gap-2 items-center cursor-pointer">
+								<img src="./images/icon-edit.svg" alt="edit" />
+								<p class="text-moderateBlue font-medium">Edit</p>
+							</button>
+						</div>
+					</div>
+					<!-- Row - 2 -->
+					<div class="comment-container w-full flex break-words">
+						<p class="my-comment text-grayishBlue leading-[1.6em] w-full break-all">
+							<span class="text-moderateBlue font-medium">@ramsesmiron</span>
+							I couldn’t agree more with this. Everything moves so fast and it always seems like
+							everyone knows the newset library/framework. But the fundamentals are what stay
+							constant.
+						</p>
+					</div>
+					<input
+						type="button"
+						value="UPDATE"
+						class="update-btn hidden ml-auto px-[28px] py-[14px] text-white bg-moderateBlue rounded-[8px] font-medium cursor-pointer"
+					/>
+				</div>
+			</div>
+
+			<!-- Input box (for replies) -->
+			<div
+				class="input-box bg-white w-full py-6 px-6 rounded-[12px] gap-4 hidden flex-row items-start justify-between"
+			>
+				<div class="max-w-10">
+					<img src="./images/avatars/Image 4.png" alt="" class="w-full" />
+				</div>
+				<div class="w-full">
+					<textarea
+						name=""
+						id=""
+						placeholder="Add a comment...."
+						class="w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]"
+					></textarea>
+				</div>
+				<div>
+					<input
+						type="button"
+						value="REPLY"
+						class="bg-moderateBlue cursor-pointer text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+					/>
+				</div>
+			</div>
+
+			<!-- Replies Container -->
+			<div class="flex flex-row w-full">
+				<!-- Vertical Divider -->
+				<div class="bg-lightGray w-[4px] min-h-full mx-[40px]"></div>
+
+				<!-- Replies -->
+				<div class="flex flex-col gap-6 w-full">
+					<div class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]">
+						<!-- Stepper -->
+						<div
+							class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+						>
+							<div id="increase" class="increase-btn">
+								<svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+									<path
+										d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+										fill="#C5C6EF"
+									/>
+								</svg>
+							</div>
+							<p class="text-moderateBlue font-medium">4</p>
+							<div id="decrease" class="decrease-btn">
+								<svg width="12" height="4" viewBox="0 0 12 4" fill="none">
+									<path
+										d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+										fill="#C5C6EF"
+									/>
+								</svg>
+							</div>
+						</div>
+						<!-- Contents -->
+						<div class="flex flex-col gap-[10px] w-full">
+							<!-- Row - 1 -->
+							<div class="flex flex-row items-center justify-between w-full">
+								<!-- Left container -->
+								<div class="flex gap-4 items-center">
+									<div class="flex gap-4 items-center">
+										<img src="./images/avatars/Image 3.png" alt="" class="w-full max-w-[32px]" />
+										<h3 class="font-medium text-darkBlue">ramsesmiron</h3>
+									</div>
+									<p class="text-grayishBlue">1 week ago</p>
+								</div>
+								<!-- Right content (Reply button) -->
+								<div class="reply-btn flex flex-row gap-2 items-center cursor-pointer">
+									<svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+										<path
+											d="M0.243408 5.1485L5.40019 0.67281C5.50227 0.584712 5.62733 0.527863 5.76055 0.508996C5.89378 0.490128 6.0296 0.510032 6.15192 0.56635C6.27424 0.622669 6.37794 0.713042 6.45074 0.826768C6.52354 0.940494 6.56239 1.07281 6.56269 1.20804V3.56543C11.2684 3.61927 15.0002 4.56696 15.0002 9.0502C15.0002 10.8594 13.8409 12.6514 12.5584 13.5884C12.1588 13.8813 11.5888 13.513 11.7366 13.0391C13.0652 8.7702 11.1066 7.6362 6.56269 7.5705V10.1594C6.56269 10.769 5.85126 11.0856 5.40019 10.6936L0.243408 6.21896C0.167157 6.15255 0.106004 6.07043 0.0640916 5.97817C0.0221794 5.88592 0.000488281 5.78569 0.000488281 5.68427C0.000488281 5.58286 0.0221794 5.48262 0.0640916 5.39037C0.106004 5.29812 0.167157 5.21492 0.243408 5.1485Z"
+											fill="#5457B6"
+										/>
+									</svg>
+									<h3 class="text-moderateBlue font-medium">Reply</h3>
+								</div>
+							</div>
+							<!-- Row - 2 -->
+							<div class="w-full">
+								<p class="text-grayishBlue leading-[1.6em]">
+									<span class="text-moderateBlue font-medium">@maxblagun</span>
+									if you’re still new, I’d recommend focusing on the fundamentals of HTML, CSS and
+									JS before considering React, It’s very tempting to jump ahead but lay a solid
+									foundation first.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- my-comment -->
+					<div
+						id="third-comment"
+						class="hidden w-full items-start gap-6 bg-white p-6 rounded-[12px]"
+					>
+						<!-- Stepper -->
+						<div
+							class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+						>
+							<div id="increase" class="increase-btn">
+								<svg width="11" height="11" viewBox="0 0 11 11">
+									<path
+										d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+										fill="#C5C6EF"
+									/>
+								</svg>
+							</div>
+							<p class="text-moderateBlue font-medium">12</p>
+							<div id="decrease" class="decrease-btn">
+								<svg width="12" height="4" viewBox="0 0 12 4">
+									<path
+										d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+										fill="#C5C6EF"
+									/>
+								</svg>
+							</div>
+						</div>
+						<!-- Contents -->
+						<div class="flex flex-col gap-[10px] w-full">
+							<!-- Row - 1 -->
+							<div class="flex flex-row items-center justify-between w-full">
+								<!-- Left container -->
+								<div class="flex gap-4 items-center">
+									<div class="flex gap-4 items-center">
+										<img src="./images/avatars/Image 4.png" alt="" class="w-full max-w-[32px]" />
+										<h3 class="font-medium text-darkBlue">amyrobson</h3>
+									</div>
+									<!-- you -->
+									<div
+										class="text-white bg-moderateBlue rounded-[2px] leading-[1em] font-medium px-[6px] py-[4px]"
+									>
+										you
+									</div>
+									<p class="text-grayishBlue">2 days ago</p>
+								</div>
+								<!-- User -->
+								<!-- Right content (Delete and Edit button) -->
+								<div id="action-btn" class="flex flex-row gap-6 items-center">
+									<button id="delete-btn" class="flex flex-row gap-2 items-center cursor-pointer">
+										<img src="./images/icon-delete.svg" alt="" srcset="" />
+										<p class="text-softRed font-medium">Delete</p>
+									</button>
+									<button class="edit-btn flex flex-row gap-2 items-center cursor-pointer">
+										<img src="./images/icon-edit.svg" alt="edit" />
+										<p class="text-moderateBlue font-medium">Edit</p>
+									</button>
+								</div>
+							</div>
+							<!-- Row - 2 -->
+							<div class="comment-container w-full flex break-words">
+								<p class="my-comment text-grayishBlue leading-[1.6em] w-full break-all">
+									<span class="text-moderateBlue font-medium">@ramsesmiron</span>
+									I couldn’t agree more with this. Everything moves so fast and it always seems like
+									everyone knows the newset library/framework. But the fundamentals are what stay
+									constant.
+								</p>
+							</div>
+							<input
+								type="button"
+								value="UPDATE"
+								class="update-btn hidden ml-auto px-[28px] py-[14px] text-white bg-moderateBlue rounded-[8px] font-medium cursor-pointer"
+							/>
+						</div>
+					</div>
+
+					<!-- Input box (for replies) -->
+					<div
+						class="input-box bg-white w-full py-6 px-6 rounded-[12px] gap-4 hidden flex-row items-start justify-between"
+					>
+						<div class="max-w-10">
+							<img src="./images/avatars/Image 4.png" alt="" class="w-full" />
+						</div>
+						<div class="w-full">
+							<textarea
+								name=""
+								id=""
+								placeholder="Add a comment...."
+								class="w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]"
+							></textarea>
+						</div>
+						<div>
+							<input
+								type="button"
+								value="REPLY"
+								class="bg-moderateBlue text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+							/>
+						</div>
+					</div>
+
+					<div class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]">
+						<!-- Stepper -->
+						<div
+							class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
+						>
+							<div id="increase" class="increase-btn">
+								<svg width="11" height="11" viewBox="0 0 11 11">
+									<path
+										d="M5.83015 10.396C5.96715 10.396 6.08515 10.346 6.18415 10.247C6.28415 10.147 6.33315 10.03 6.33315 9.893V6.504H9.64815C9.78415 6.504 9.90215 6.454 10.0021 6.355C10.1011 6.255 10.1501 6.138 10.1501 6.001V4.772C10.151 4.70601 10.1383 4.64056 10.1128 4.57967C10.0874 4.51879 10.0497 4.46376 10.0021 4.418C9.95647 4.37027 9.90149 4.33243 9.8406 4.3068C9.77971 4.28117 9.71421 4.26831 9.64815 4.269H6.33315V0.899999C6.33384 0.83394 6.32098 0.768441 6.29535 0.707552C6.26972 0.646663 6.23187 0.591679 6.18415 0.545999C6.13847 0.498274 6.08348 0.460427 6.0226 0.434799C5.96171 0.409171 5.89621 0.396306 5.83015 0.396999H4.41515C4.34909 0.396306 4.28359 0.409171 4.2227 0.434799C4.16181 0.460427 4.10683 0.498274 4.06115 0.545999C3.96115 0.645999 3.91215 0.762999 3.91215 0.899999V4.27H0.580148C0.514017 4.26943 0.448473 4.28246 0.38758 4.30826C0.326687 4.33406 0.271742 4.37209 0.226148 4.42C0.126148 4.519 0.0771484 4.637 0.0771484 4.773V6.003C0.0771484 6.139 0.127148 6.257 0.226148 6.356C0.326148 6.456 0.443148 6.505 0.580148 6.505H3.91315V9.895C3.91315 10.031 3.96315 10.149 4.06315 10.248C4.16115 10.348 4.27915 10.397 4.41615 10.397H5.83015V10.396Z"
+										fill="#C5C6EF"
+									/>
+								</svg>
+							</div>
+							<p class="text-moderateBlue font-medium">12</p>
+							<div id="decrease" class="decrease-btn">
+								<svg width="12" height="4" viewBox="0 0 12 4">
+									<path
+										d="M9.75579 3.16004C9.95979 3.16004 10.1358 3.10404 10.2858 2.99304C10.4338 2.88304 10.5078 2.75004 10.5078 2.59704V1.22204C10.5078 1.07004 10.4338 0.93804 10.2848 0.82704C10.1315 0.71419 9.94508 0.655448 9.75479 0.66004H1.25979C1.0695 0.655448 0.883074 0.71419 0.729789 0.82704C0.582789 0.93704 0.508789 1.07004 0.508789 1.22204V2.59704C0.508789 2.75004 0.582789 2.88204 0.731789 2.99304C0.885074 3.10589 1.0715 3.16463 1.26179 3.16004H9.75679H9.75579Z"
+										fill="#C5C6EF"
+									/>
+								</svg>
+							</div>
+						</div>
+						<!-- Contents -->
+						<div class="flex flex-col gap-[10px] w-full">
+							<!-- Row - 1 -->
+							<div class="flex flex-row items-center justify-between w-full">
+								<!-- Left container -->
+								<div class="flex gap-4 items-center">
+									<div class="flex gap-4 items-center">
+										<img src="./images/avatars/Image 4.png" alt="" class="w-full max-w-[32px]" />
+										<h3 class="font-medium text-darkBlue">amyrobson</h3>
+									</div>
+									<!-- you -->
+									<div
+										class="text-white bg-moderateBlue rounded-[2px] leading-[1em] font-medium px-[6px] py-[4px]"
+									>
+										you
+									</div>
+									<p class="text-grayishBlue">2 days ago</p>
+								</div>
+								<!-- User -->
+								<!-- Right content (Delete and Edit button) -->
+								<div id="action-btn" class="flex flex-row gap-6 items-center">
+									<button id="delete-btn" class="flex flex-row gap-2 items-center cursor-pointer">
+										<img src="./images/icon-delete.svg" alt="" srcset="" />
+										<p class="text-softRed font-medium">Delete</p>
+									</button>
+									<button class="edit-btn flex flex-row gap-2 items-center cursor-pointer">
+										<img src="./images/icon-edit.svg" alt="edit" />
+										<p class="text-moderateBlue font-medium">Edit</p>
+									</button>
+								</div>
+							</div>
+							<!-- Row - 2 -->
+							<div class="comment-container w-full flex break-words">
+								<p class="my-comment text-grayishBlue leading-[1.6em] w-full break-all">
+									<span class="text-moderateBlue font-medium">@ramsesmiron</span>
+									I couldn’t agree more with this. Everything moves so fast and it always seems like
+									everyone knows the newset library/framework. But the fundamentals are what stay
+									constant.
+								</p>
+							</div>
+							<input
+								type="button"
+								value="UPDATE"
+								class="update-btn hidden ml-auto px-[28px] py-[14px] text-white bg-moderateBlue rounded-[8px] font-medium cursor-pointer"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- comment box -->
+			<div
+				class="input-box bg-white w-full py-6 px-6 rounded-[12px] gap-4 flex flex-row items-start justify-between"
+			>
+				<div class="max-w-10">
+					<img src="./images/avatars/Image 4.png" alt="" class="w-full" />
+				</div>
+				<div class="w-full">
+					<textarea
+						name=""
+						id=""
+						placeholder="Add a comment...."
+						class="w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]"
+					></textarea>
+				</div>
+				<div>
+					<input
+						type="button"
+						value="SEND"
+						class="bg-moderateBlue text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- Overlay & Delete Modal -->
+		<div class="overlay hidden">
+			<div class="delete-modal hidden">
+				<h3 class="text-darkBlue text-[24px] font-medium mb-[18px] leading-[1.2em]">
+					Delete comment
+				</h3>
+				<p class="text-grayishBlue mb-[20px] leading-[1.5em]">
+					Are you sure you want to delete this comment? This will remove the comment and can’t be
+					undone.
+				</p>
+				<div class="flex flex-row gap-4">
+					<input
+						type="button"
+						value="NO, CANCEL"
+						class="cancel-btn cursor-pointer w-full bg-grayishBlue text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+					/>
+					<input
+						type="button"
+						value="YES, DELETE"
+						class="delete-btn cursor-pointer w-full bg-softRed text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+					/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
