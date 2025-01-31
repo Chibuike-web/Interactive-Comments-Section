@@ -635,6 +635,10 @@ video {
   align-items: flex-start;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -849,31 +853,6 @@ html {
   box-sizing: border-box;
 }
 
-/* @font-face {
-	font-family: "DM Sans";
-	src: url("../Fonts/DMSans_18pt-Regular.ttf") format("truetype");
-	font-weight: 400;
-	font-style: normal;
-}
-
-/* SemiBold weight */
-
-/* @font-face {
-	font-family: "DM Sans";
-	src: url("../Fonts/DMSans_18pt-SemiBold.ttf") format("truetype");
-	font-weight: 600;
-	font-style: normal;
-} */
-
-/* Bold weight */
-
-/* @font-face {
-	font-family: "DM Sans";
-	src: url("../Fonts/DMSans_18pt-Bold.ttf") format("truetype");
-	font-weight: 700;
-	font-style: normal;
-} */
-
 p {
   line-height: 1.2;
 }
@@ -951,6 +930,14 @@ textarea::-webkit-scrollbar {
     margin: 1rem;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:h-auto {
     height: auto;
   }
@@ -964,12 +951,24 @@ textarea::-webkit-scrollbar {
     flex-direction: row;
   }
 
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
   .md\:flex-col-reverse {
     flex-direction: column-reverse;
   }
 
+  .md\:items-end {
+    align-items: flex-end;
+  }
+
   .md\:gap-\[20px\] {
     gap: 20px;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
   }
 
   .md\:px-\[10px\] {
