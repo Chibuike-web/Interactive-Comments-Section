@@ -16,7 +16,7 @@ const addComment = (e) => {
 	// Create the comment container.
 	const parentDiv = document.createElement("div");
 
-	parentDiv.className = "new-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px]";
+	parentDiv.className = "my-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px]";
 
 	// Create the Stepper container.
 	const newStepper = document.createElement("div");
@@ -106,7 +106,6 @@ const addComment = (e) => {
 
 	// Action buttons container.
 	const actionBtns = document.createElement("div");
-	actionBtns.id = "action-btns";
 	actionBtns.className = "flex flex-row gap-6 items-center";
 
 	// Delete button.
@@ -140,8 +139,9 @@ const addComment = (e) => {
 	actionBtns.appendChild(editBtn);
 	topRow.appendChild(actionBtns);
 
+	// Bottom Row
 	const comment = document.createElement("p");
-	comment.className = "comment text-grayishBlue leading-[1.6em] w-full";
+	comment.className = "my-comment-text text-grayishBlue leading-[1.6em] w-full";
 	comment.textContent = commentInput.value;
 
 	contentDiv.appendChild(comment);
@@ -149,10 +149,8 @@ const addComment = (e) => {
 	const children = wrapper.children;
 	wrapper.insertBefore(parentDiv, children[children.length - 1]);
 
-	// Attach events to the stepper (for increase/decrease functionality).
 	attachStepperEvents(newStepper);
 
-	// Optionally, clear the input after adding a comment.
 	commentInput.value = "";
 };
 

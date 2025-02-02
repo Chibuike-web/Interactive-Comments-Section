@@ -18,7 +18,7 @@
 		<!-- Wrapper -->
 		<div id="wrapper" class="flex flex-col gap-[24px] w-full max-w-[731px]">
 			<!-- Comment 1 -->
-			<div class="flex w-full items-start gap-6 bg-white p-6 md:p-4 rounded-[12px]">
+			<div class="comment flex w-full items-start gap-6 bg-white p-6 md:p-4 rounded-[12px]">
 				<!-- Stepper -->
 				<div
 					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
@@ -80,7 +80,7 @@
 			</div>
 
 			<!-- Comment 2 -->
-			<div class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px]">
+			<div class="comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px]">
 				<!-- Stepper -->
 				<div
 					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
@@ -151,7 +151,9 @@
 
 				<!-- Replies -->
 				<div class="flex flex-col gap-6 w-full">
-					<div class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]">
+					<div
+						class="reply-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]"
+					>
 						<!-- Stepper -->
 						<div
 							class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
@@ -210,8 +212,7 @@
 					</div>
 
 					<div
-						id="fourth-comment"
-						class="flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]"
+						class="my-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]"
 					>
 						<!-- Stepper -->
 						<div
@@ -267,9 +268,8 @@
 									</button>
 								</div>
 							</div>
-							<!-- Row - 2 -->
-
-							<p class="my-comment text-grayishBlue leading-[1.6em] w-full">
+							<!-- Bottom Row -->
+							<p class="my-comment-text text-grayishBlue leading-[1.6em] w-full">
 								<span class="text-moderateBlue font-medium">@ramsesmiron</span>
 								I couldn’t agree more with this. Everything moves so fast and it always seems like
 								everyone knows the newset library/framework. But the fundamentals are what stay
@@ -325,14 +325,12 @@
 					<input
 						type="button"
 						value="NO, CANCEL"
-						id="cancel-btn"
-						class="cursor-pointer w-full bg-grayishBlue text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+						class="modal-cancel-btn cursor-pointer w-full bg-grayishBlue text-white font-medium px-[28px] py-[14px] rounded-[8px]"
 					/>
 					<input
 						type="button"
 						value="YES, DELETE"
-						id="modal-delete-btn"
-						class="cursor-pointer w-full bg-softRed text-white font-medium px-[28px] py-[14px] rounded-[8px]"
+						class="modal-delete-btn cursor-pointer w-full bg-softRed text-white font-medium px-[28px] py-[14px] rounded-[8px]"
 					/>
 				</div>
 			</div>
