@@ -903,8 +903,4 @@ textarea::-webkit-scrollbar {
   .md\:m-4 {
     margin: 1rem;
   }
-
-  .md\:p-4 {
-    padding: 1rem;
-  }
 }
