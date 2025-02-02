@@ -12,6 +12,7 @@ export function attachDeleteEvents(deleteBtn) {
 
 		overlay.style.display = "block";
 		deleteModal.style.display = "block";
+
 		overlay.addEventListener("click", (e) => {
 			if (e.target.classList.contains("overlay")) {
 				overlay.style.display = "none";

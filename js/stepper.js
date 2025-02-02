@@ -8,7 +8,6 @@ export function attachStepperEvents(stepper) {
 		child.addEventListener("click", (e) => {
 			e.preventDefault();
 
-			console.log("click");
 			if (e.currentTarget.id === "increase" && count <= initialCount) {
 				p.textContent = ++count;
 			}

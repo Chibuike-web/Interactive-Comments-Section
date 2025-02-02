@@ -8,7 +8,6 @@ const commentInput = document.getElementById("comment-input");
 const addComment = (e) => {
 	e.preventDefault();
 
-	// Only add a comment if there is non-whitespace input.
 	if (commentInput.value.trim().length === 0) {
 		return;
 	}

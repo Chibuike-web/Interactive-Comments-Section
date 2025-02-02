@@ -18,7 +18,7 @@
 		<!-- Wrapper -->
 		<div id="wrapper" class="flex flex-col gap-[24px] w-full max-w-[731px]">
 			<!-- Comment 1 -->
-			<div class="comment flex w-full items-start gap-6 bg-white p-6 md:p-4 rounded-[12px]">
+			<div class="comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px]">
 				<!-- Stepper -->
 				<div
 					class="stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center"
@@ -152,7 +152,7 @@
 				<!-- Replies -->
 				<div class="flex flex-col gap-6 w-full">
 					<div
-						class="reply-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]"
+						class="comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px] max-w-[652px]"
 					>
 						<!-- Stepper -->
 						<div
@@ -285,29 +285,23 @@
 				class="input-box bg-white w-full py-6 px-6 rounded-[12px] gap-4 flex flex-row items-start justify-between"
 			>
 				<!-- User Avatar -->
-				<div class="max-w-10">
-					<img src="./images/avatars/Image 4.png" alt="User Avatar" class="w-full" />
-				</div>
+				<img src="./images/avatars/Image 4.png" alt="User Avatar" class="w-full max-w-10" />
 
 				<!-- Comment Textarea -->
-				<div class="w-full">
-					<textarea
-						name="comment"
-						id="comment-input"
-						placeholder="Add a comment..."
-						class="w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]"
-					></textarea>
-				</div>
+				<textarea
+					name="comment"
+					id="comment-input"
+					placeholder="Add a comment..."
+					class="w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]"
+				></textarea>
 
 				<!-- Send Comment Button -->
-				<div>
-					<input
-						type="button"
-						value="SEND"
-						id="send-btn"
-						class="bg-moderateBlue text-white font-medium px-[28px] py-[14px] rounded-[8px] cursor-pointer"
-					/>
-				</div>
+				<input
+					type="button"
+					value="SEND"
+					id="send-btn"
+					class="bg-moderateBlue text-white font-medium px-[28px] py-[14px] rounded-[8px] cursor-pointer"
+				/>
 			</div>
 		</div>
 
