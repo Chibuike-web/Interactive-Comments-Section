@@ -1,4 +1,5 @@
 import { attachStepperEvents } from "./stepper.js";
+import { attachDeleteEvents } from "./delete.js";
 
 const sendBtn = document.getElementById("send-btn");
 const wrapper = document.getElementById("wrapper");
@@ -119,6 +120,9 @@ const addComment = (e) => {
 	deleteText.className = "text-softRed font-medium";
 	deleteBtn.appendChild(deleteIcon);
 	deleteBtn.appendChild(deleteText);
+
+	// Add event listener to delete button by attaching the function.
+	attachDeleteEvents(deleteBtn);
 
 	// Edit button.
 	const editBtn = document.createElement("button");

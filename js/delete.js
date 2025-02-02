@@ -1,4 +1,19 @@
-const deleteBtns = document.querySelectorAll(".delete-btn");
-const modalDeleteBtn = document.getElementById("modal-delete-btn");
+export function attachDeleteEvents(deleteBtn) {
+	deleteBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		console.log("delete-btn clicked");
+		const overlay = document.querySelector(".overlay");
+		const deleteModal = document.querySelector(".delete-modal");
+		overlay.style.display = "block";
+		deleteModal.style.display = "block";
+		overlay.addEventListener("click", (e) => {
+			if (e.target.classList.contains("overlay")) {
+				overlay.style.display = "none";
+				deleteModal.style.display = "none";
+			}
+		});
+	});
+}
 
-console.log(deleteBtns);
+const deleteBtns = document.querySelectorAll(".delete-btn");
+deleteBtns.forEach(attachDeleteEvents);
