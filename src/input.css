@@ -42,14 +42,13 @@ button:disabled {
 textarea {
 	width: 100%;
 	height: 100px;
-	overflow: auto; /* Ensure scrolling is possible */
-	scrollbar-width: none; /* For Firefox */
-	-ms-overflow-style: none; /* For Internet Explorer and Edge */
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 }
 
-/* For Chrome, Safari, and Opera */
 textarea::-webkit-scrollbar {
-	display: none; /* Hide the scrollbar */
+	display: none;
 }
 
 .overlay {
@@ -74,7 +73,3 @@ textarea::-webkit-scrollbar {
 	width: 100%;
 	max-width: 400px;
 }
-
-/* .input-box {
-	display: hidden;
-} */

@@ -575,10 +575,6 @@ video {
   margin-bottom: 20px;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
 .flex {
   display: flex;
 }
@@ -669,14 +665,6 @@ video {
 
 .gap-\[24px\] {
   gap: 24px;
-}
-
-.break-words {
-  overflow-wrap: break-word;
-}
-
-.break-all {
-  word-break: break-all;
 }
 
 .rounded-\[12px\] {
@@ -880,18 +868,12 @@ textarea {
   width: 100%;
   height: 100px;
   overflow: auto;
-  /* Ensure scrolling is possible */
   scrollbar-width: none;
-  /* For Firefox */
   -ms-overflow-style: none;
-  /* For Internet Explorer and Edge */
 }
-
-/* For Chrome, Safari, and Opera */
 
 textarea::-webkit-scrollbar {
   display: none;
-  /* Hide the scrollbar */
 }
 
 .overlay {
@@ -917,43 +899,12 @@ textarea::-webkit-scrollbar {
   max-width: 400px;
 }
 
-/* .input-box {
-	display: hidden;
-} */
-
 @media (max-width: 768px) {
   .md\:m-4 {
     margin: 1rem;
   }
 
-  .md\:h-auto {
-    height: auto;
-  }
-
-  .md\:max-w-max {
-    max-width: -moz-max-content;
-    max-width: max-content;
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:flex-col-reverse {
-    flex-direction: column-reverse;
-  }
-
-  .md\:gap-\[20px\] {
-    gap: 20px;
-  }
-
-  .md\:px-\[10px\] {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .md\:py-\[12px\] {
-    padding-top: 12px;
-    padding-bottom: 12px;
+  .md\:p-4 {
+    padding: 1rem;
   }
 }
