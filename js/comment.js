@@ -13,17 +13,17 @@ const addComment = (e) => {
 		return;
 	}
 
-	// Create the comment container.
+	// Create the comment container
 	const parentDiv = document.createElement("div");
 
 	parentDiv.className = "my-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px]";
 
-	// Create the Stepper container.
+	// Create the Stepper container
 	const newStepper = document.createElement("div");
 	newStepper.className =
 		"stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center";
 
-	// Increase button.
+	// Increase button
 	const increaseBtn = document.createElement("button");
 	increaseBtn.id = "increase";
 	increaseBtn.classList.add("increase-btn");
@@ -37,13 +37,13 @@ const addComment = (e) => {
   `;
 	newStepper.appendChild(increaseBtn);
 
-	// Stepper quantity.
+	// Stepper quantity
 	const quantityParagraph = document.createElement("p");
 	quantityParagraph.textContent = 0;
 	quantityParagraph.className = "text-moderateBlue font-medium";
 	newStepper.appendChild(quantityParagraph);
 
-	// Decrease button.
+	// Decrease button
 	const decreaseBtn = document.createElement("button");
 	decreaseBtn.id = "decrease";
 	decreaseBtn.classList.add("decrease-btn");
@@ -57,20 +57,20 @@ const addComment = (e) => {
   `;
 	newStepper.appendChild(decreaseBtn);
 
-	// Add the stepper to the comment container.
+	// Add the stepper to the comment container
 	parentDiv.appendChild(newStepper);
 
-	// Create the content container.
+	// Create the content container
 	const contentDiv = document.createElement("div");
 	contentDiv.className = "content-container flex flex-col gap-[10px] w-full";
 	parentDiv.appendChild(contentDiv);
 
-	// Create the top row (profile info, action buttons, etc.).
+	// Create the top row (profile info, action buttons)
 	const topRow = document.createElement("div");
 	topRow.className = "flex flex-row items-center justify-between w-full";
 	contentDiv.appendChild(topRow);
 
-	// Profile wrapper (holds profile image, username, etc.).
+	// Profile wrapper (holds profile image, username)
 	const profileWrapper = document.createElement("div");
 	profileWrapper.className = "flex gap-4 items-center";
 
@@ -89,14 +89,14 @@ const addComment = (e) => {
 	profile.appendChild(h3);
 	profileWrapper.appendChild(profile);
 
-	// "You" tag.
+	// "You" tag
 	const youTag = document.createElement("div");
 	youTag.className =
 		"text-white bg-moderateBlue rounded-[2px] leading-[1em] font-medium px-[6px] py-[4px]";
 	youTag.textContent = "you";
 	profileWrapper.appendChild(youTag);
 
-	// Duration.
+	// Duration
 	const duration = document.createElement("div");
 	duration.textContent = " 2 days ago";
 	duration.className = "text-grayishBlue";
@@ -104,11 +104,11 @@ const addComment = (e) => {
 
 	topRow.appendChild(profileWrapper);
 
-	// Action buttons container.
+	// Action buttons container
 	const actionBtns = document.createElement("div");
 	actionBtns.className = "flex flex-row gap-6 items-center";
 
-	// Delete button.
+	// Delete button
 	const deleteBtn = document.createElement("button");
 	deleteBtn.className = "delete-btn flex flex-row gap-2 items-center cursor-pointer";
 	const deleteIcon = document.createElement("img");
@@ -120,7 +120,7 @@ const addComment = (e) => {
 	deleteBtn.appendChild(deleteIcon);
 	deleteBtn.appendChild(deleteText);
 
-	// Add event listener to delete button by attaching the function.
+	// Add event listener to delete button by attaching the function
 	attachDeleteEvents(deleteBtn);
 
 	// Edit button.
@@ -135,6 +135,7 @@ const addComment = (e) => {
 	editBtn.appendChild(editIcon);
 	editBtn.appendChild(editText);
 
+	// Add event listener to edit button by attaching the function
 	attachEditEvents(editBtn);
 
 	actionBtns.appendChild(deleteBtn);

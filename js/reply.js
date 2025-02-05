@@ -7,27 +7,27 @@ replyBtns.forEach((replyBtn) => {
 	replyBtn.addEventListener("click", (e) => {
 		e.preventDefault();
 
-		// Check if a reply box is already open to prevent duplicates.
+		// Check if a reply box is already open to prevent duplicates
 		if (document.querySelector("#reply-input-box")) return;
 
 		replyBtn.disabled = true;
 
 		let activeComment = replyBtn.closest(".comment");
 
-		// --- Create the Reply Input Component ---
+		// Create the Reply Input Component
 		const parentDiv = document.createElement("div");
 		parentDiv.className =
 			"bg-white w-full py-6 px-6 rounded-[12px] gap-4 flex flex-row items-start justify-between";
 		parentDiv.id = "reply-input-box";
 
-		// User Avatar.
+		// User Avatar
 		const avatarImg = document.createElement("img");
 		avatarImg.className = "w-full max-w-10";
 		avatarImg.alt = "User Avatar";
 		avatarImg.src = "./images/avatars/Image 4.png";
 		parentDiv.appendChild(avatarImg);
 
-		// Textarea for comment.
+		// Textarea for comment
 		const textArea = document.createElement("textarea");
 		textArea.placeholder = "Add a comment...";
 		textArea.id = "reply-input";
@@ -35,7 +35,7 @@ replyBtns.forEach((replyBtn) => {
 			"w-full px-5 pt-[10px] pb-[20px] border-[1px] border-lightGray rounded-[6px]";
 		parentDiv.appendChild(textArea);
 
-		// Send Reply Button.
+		// Send Reply Button
 		const sendReplyBtn = document.createElement("input");
 		sendReplyBtn.type = "button";
 		sendReplyBtn.value = "REPLY";
@@ -47,23 +47,23 @@ replyBtns.forEach((replyBtn) => {
 		// Insert the reply input box into the DOM after the active comment.
 		activeComment.insertAdjacentElement("afterend", parentDiv);
 
-		// --- Send Reply Button Event ---
+		//Send Reply Button Event
 		sendReplyBtn.addEventListener("click", (e) => {
 			e.preventDefault();
 			const replyText = textArea.value.trim();
 
 			if (replyText.length > 0) {
-				// Create the new comment container.
+				// Create the new comment container
 				const commentParentDiv = document.createElement("div");
 				commentParentDiv.className =
 					"my-comment flex w-full items-start gap-6 bg-white p-6 rounded-[12px]";
 
-				// Create and configure the Stepper component.
+				// Create and configure the Stepper component
 				const newStepper = document.createElement("div");
 				newStepper.className =
 					"stepper bg-veryLightGray w-full max-w-10 flex flex-col py-3 rounded-lg gap-5 items-center";
 
-				// Increase button.
+				// Increase button
 				const increaseBtn = document.createElement("button");
 				increaseBtn.id = "increase";
 				increaseBtn.classList.add("increase-btn");
@@ -77,13 +77,13 @@ replyBtns.forEach((replyBtn) => {
   `;
 				newStepper.appendChild(increaseBtn);
 
-				// Stepper quantity.
+				// Stepper quantity
 				const quantityParagraph = document.createElement("p");
 				quantityParagraph.textContent = 0;
 				quantityParagraph.className = "text-moderateBlue font-medium";
 				newStepper.appendChild(quantityParagraph);
 
-				// Decrease button.
+				// Decrease button
 				const decreaseBtn = document.createElement("button");
 				decreaseBtn.id = "decrease";
 				decreaseBtn.classList.add("decrease-btn");
@@ -96,23 +96,23 @@ replyBtns.forEach((replyBtn) => {
     </svg>
   `;
 				newStepper.appendChild(decreaseBtn);
-				// Attach the stepper events.
+				// Attach the stepper events
 				attachStepperEvents(newStepper);
 
-				// Append the stepper to the comment container.
+				// Append the stepper to the comment container
 				commentParentDiv.appendChild(newStepper);
 
-				// Content container.
+				// Content container
 				const contentDiv = document.createElement("div");
 				contentDiv.className = "content-container flex flex-col gap-[10px] w-full";
 				commentParentDiv.appendChild(contentDiv);
 
-				// Top Row (Profile info and action buttons).
+				// Top Row (Profile info and action buttons)
 				const topRow = document.createElement("div");
 				topRow.className = "flex flex-row items-center justify-between w-full";
 				contentDiv.appendChild(topRow);
 
-				// Profile wrapper.
+				// Profile wrapper
 				const profileWrapper = document.createElement("div");
 				profileWrapper.className = "flex gap-4 items-center";
 
@@ -131,14 +131,14 @@ replyBtns.forEach((replyBtn) => {
 				profile.appendChild(h3);
 				profileWrapper.appendChild(profile);
 
-				// "You" tag.
+				// "You" tag
 				const youTag = document.createElement("div");
 				youTag.className =
 					"text-white bg-moderateBlue rounded-[2px] leading-[1em] font-medium px-[6px] py-[4px]";
 				youTag.textContent = "you";
 				profileWrapper.appendChild(youTag);
 
-				// Duration.
+				// Duration
 				const duration = document.createElement("div");
 				duration.textContent = " 2 days ago";
 				duration.className = "text-grayishBlue";
@@ -146,11 +146,11 @@ replyBtns.forEach((replyBtn) => {
 
 				topRow.appendChild(profileWrapper);
 
-				// Action buttons container.
+				// Action buttons container
 				const actionBtns = document.createElement("div");
 				actionBtns.className = "flex flex-row gap-6 items-center";
 
-				// Delete button.
+				// Delete button
 				const deleteBtn = document.createElement("button");
 				deleteBtn.className = "delete-btn flex flex-row gap-2 items-center cursor-pointer";
 				const deleteIcon = document.createElement("img");
@@ -161,9 +161,10 @@ replyBtns.forEach((replyBtn) => {
 				deleteText.className = "text-softRed font-medium";
 				deleteBtn.appendChild(deleteIcon);
 				deleteBtn.appendChild(deleteText);
+
 				attachDeleteEvents(deleteBtn); // Attach delete event
 
-				// Edit button.
+				// Edit button
 				const editBtn = document.createElement("button");
 				editBtn.className = "delete-btn flex flex-row gap-2 items-center cursor-pointer";
 				const editIcon = document.createElement("img");

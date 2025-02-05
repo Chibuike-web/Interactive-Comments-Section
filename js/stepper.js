@@ -18,6 +18,5 @@ export function attachStepperEvents(stepper) {
 	});
 }
 
-// Attach events to all existing steppers on page load:
 const steppers = document.querySelectorAll(".stepper");
 steppers.forEach(attachStepperEvents);
