@@ -631,6 +631,10 @@ video {
   align-items: flex-start;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -897,6 +901,21 @@ textarea::-webkit-scrollbar {
   z-index: 2000;
   width: 100%;
   max-width: 400px;
+}
+
+.update-btn {
+  background-color: hsl(238, 40%, 52%);
+  display: flex;
+  align-self: self-end;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-weight: 600;
+  padding-inline: 28px;
+  padding-block: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-block-start: 6px;
 }
 
 @media (max-width: 768px) {

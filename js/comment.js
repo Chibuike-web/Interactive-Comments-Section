@@ -1,5 +1,6 @@
 import { attachStepperEvents } from "./stepper.js";
 import { attachDeleteEvents } from "./delete.js";
+import { attachEditEvents } from "./edit.js";
 
 const sendBtn = document.getElementById("send-btn");
 const wrapper = document.getElementById("wrapper");
@@ -61,7 +62,7 @@ const addComment = (e) => {
 
 	// Create the content container.
 	const contentDiv = document.createElement("div");
-	contentDiv.className = "flex flex-col gap-[10px] w-full";
+	contentDiv.className = "content-container flex flex-col gap-[10px] w-full";
 	parentDiv.appendChild(contentDiv);
 
 	// Create the top row (profile info, action buttons, etc.).
@@ -133,6 +134,8 @@ const addComment = (e) => {
 	editText.className = "text-moderateBlue font-medium";
 	editBtn.appendChild(editIcon);
 	editBtn.appendChild(editText);
+
+	attachEditEvents(editBtn);
 
 	actionBtns.appendChild(deleteBtn);
 	actionBtns.appendChild(editBtn);

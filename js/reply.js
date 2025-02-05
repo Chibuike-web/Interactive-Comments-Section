@@ -1,6 +1,7 @@
 const replyBtns = document.querySelectorAll(".reply-btn");
 import { attachStepperEvents } from "./stepper.js";
 import { attachDeleteEvents } from "./delete.js";
+import { attachEditEvents } from "./edit.js";
 
 replyBtns.forEach((replyBtn) => {
 	replyBtn.addEventListener("click", (e) => {
@@ -103,7 +104,7 @@ replyBtns.forEach((replyBtn) => {
 
 				// Content container.
 				const contentDiv = document.createElement("div");
-				contentDiv.className = "flex flex-col gap-[10px] w-full";
+				contentDiv.className = "content-container flex flex-col gap-[10px] w-full";
 				commentParentDiv.appendChild(contentDiv);
 
 				// Top Row (Profile info and action buttons).
@@ -174,6 +175,8 @@ replyBtns.forEach((replyBtn) => {
 				editBtn.appendChild(editIcon);
 				editBtn.appendChild(editText);
 
+				attachEditEvents(editBtn);
+
 				actionBtns.appendChild(deleteBtn);
 				actionBtns.appendChild(editBtn);
 				topRow.appendChild(actionBtns);
@@ -181,7 +184,15 @@ replyBtns.forEach((replyBtn) => {
 				// Comment text (Bottom Row).
 				const commentText = document.createElement("p");
 				commentText.className = "my-comment-text text-grayishBlue leading-[1.6em] w-full";
-				commentText.textContent = replyText;
+
+				if (replyText.trim().startsWith("@")) {
+					const [usernamePart, ...commentParts] = replyText.split(" ");
+					const commentBody = commentParts.join(" ").trim();
+					commentText.innerHTML = `<span class="text-moderateBlue font-medium">${usernamePart.trim()}</span> ${commentBody}`;
+				} else {
+					commentText.textContent = replyText;
+				}
+
 				contentDiv.appendChild(commentText);
 
 				// Insert the new comment after the active comment.
