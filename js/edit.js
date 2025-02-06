@@ -1,16 +1,16 @@
-// Helper function to toggle the disabled state of elements
-function toggleButtons(selector, boolean) {
-	document.querySelectorAll(selector).forEach((btn) => {
-		btn.disabled = boolean;
-	});
-}
-
 export function attachEditEvents(editBtn) {
 	editBtn.addEventListener("click", (e) => {
 		e.preventDefault();
+		if (document.querySelector("#reply-input")) return;
 
 		const activeComment = editBtn.closest(".my-comment");
 		const commentText = activeComment.querySelector(".my-comment-text");
+
+		// Helper function to toggle the disabled state of elements
+		function toggleButtons(selector, boolean) {
+			const button = activeComment.querySelector(selector);
+			button.disabled = boolean;
+		}
 
 		// Remove the old comment text
 		commentText.remove();
@@ -29,6 +29,18 @@ export function attachEditEvents(editBtn) {
 		editBtn.disabled = true;
 		toggleButtons(".delete-btn", true);
 
+		// Attach a click event on the body to remove the comment if clicked outside.
+		document.body.addEventListener("click", function handleBodyClick(e) {
+			if (
+				!contentContainer.contains(e.target) &&
+				!editBtn.contains(e.target) &&
+				textArea.value.trim().length === 0
+			) {
+				activeComment.remove();
+				document.body.removeEventListener("click", handleBodyClick);
+			}
+		});
+
 		// Create the update button
 		const updateBtn = document.createElement("input");
 		updateBtn.type = "button";
@@ -36,6 +48,9 @@ export function attachEditEvents(editBtn) {
 		updateBtn.classList.add("update-btn");
 
 		updateBtn.addEventListener("click", (e) => {
+			if (textArea.value.trim().length === 0) {
+				return;
+			}
 			e.preventDefault();
 
 			const activeSpan = commentText.querySelector("span");

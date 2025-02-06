@@ -7,8 +7,8 @@ replyBtns.forEach((replyBtn) => {
 	replyBtn.addEventListener("click", (e) => {
 		e.preventDefault();
 
-		// Check if a reply box is already open to prevent duplicates
 		if (document.querySelector("#reply-input-box")) return;
+		if (document.querySelector("#reply-input")) return;
 
 		replyBtn.disabled = true;
 
@@ -46,6 +46,19 @@ replyBtns.forEach((replyBtn) => {
 
 		// Insert the reply input box into the DOM after the active comment.
 		activeComment.insertAdjacentElement("afterend", parentDiv);
+
+		// Attach a click event on the body to remove the reply input box if clicked outside.
+		document.body.addEventListener("click", function handleBodyClick(e) {
+			if (
+				!parentDiv.contains(e.target) &&
+				!replyBtn.contains(e.target) &&
+				textArea.value.trim().length === 0
+			) {
+				parentDiv.remove();
+				replyBtn.disabled = false;
+				document.body.removeEventListener("click", handleBodyClick);
+			}
+		});
 
 		//Send Reply Button Event
 		sendReplyBtn.addEventListener("click", (e) => {

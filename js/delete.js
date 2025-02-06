@@ -8,6 +8,9 @@ export function attachDeleteEvents(deleteBtn) {
 
 	deleteBtn.addEventListener("click", (e) => {
 		e.preventDefault();
+		if (document.querySelector("#reply-input-box")) return;
+		if (document.querySelector("#reply-input")) return;
+
 		activeComment = deleteBtn.closest(".my-comment");
 
 		overlay.style.display = "block";
