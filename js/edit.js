@@ -54,15 +54,23 @@ export function attachEditEvents(editBtn) {
 			e.preventDefault();
 
 			const activeSpan = commentText.querySelector("span");
-			const username = activeSpan ? activeSpan.textContent.trim() : "";
+			let username = "";
 			let updatedText = textArea.value.trim();
 
-			if (username && updatedText.startsWith(username)) {
-				updatedText = updatedText.slice(username.length).trim();
+			if (activeSpan) {
+				username = activeSpan.textContent.trim();
 			}
 
-			if (activeSpan) {
-				commentText.innerHTML = `<span class="text-moderateBlue font-medium">${activeSpan.textContent}</span> ${updatedText}`;
+			if (updatedText.startsWith("@")) {
+				const match = updatedText.match(/^@(\S+)/);
+				if (match) {
+					username = match[0];
+					updatedText = updatedText.slice(username.length).trim();
+				}
+			}
+
+			if (username && textArea.value.trim().startsWith("@")) {
+				commentText.innerHTML = `<span class="text-moderateBlue font-medium">${username}</span> ${updatedText}`;
 			} else {
 				commentText.textContent = updatedText;
 			}

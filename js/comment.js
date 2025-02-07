@@ -145,7 +145,15 @@ const addComment = (e) => {
 	// Bottom Row
 	const comment = document.createElement("p");
 	comment.className = "my-comment-text text-grayishBlue leading-[1.6em] w-full";
-	comment.textContent = commentInput.value;
+	let inputText = commentInput.value;
+
+	if (inputText.trim().startsWith("@")) {
+		const [usernamePart, ...commentParts] = inputText.split(" ");
+		const commentBody = commentParts.join(" ").trim();
+		comment.innerHTML = `<span class="text-moderateBlue font-medium">${usernamePart.trim()}</span> ${commentBody}`;
+	} else {
+		comment.textContent = inputText;
+	}
 
 	contentDiv.appendChild(comment);
 
