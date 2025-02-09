@@ -2,6 +2,7 @@ const replyBtns = document.querySelectorAll(".reply-btn");
 import { attachStepperEvents } from "./stepper.js";
 import { attachDeleteEvents } from "./delete.js";
 import { attachEditEvents } from "./edit.js";
+import { updateDuration } from "./time.js";
 
 replyBtns.forEach((replyBtn) => {
 	replyBtn.addEventListener("click", (e) => {
@@ -152,9 +153,12 @@ replyBtns.forEach((replyBtn) => {
 				profileWrapper.appendChild(youTag);
 
 				// Duration
+				const timeOfPost = new Date();
 				const duration = document.createElement("div");
-				duration.textContent = " 2 days ago";
 				duration.className = "text-grayishBlue";
+				updateDuration(timeOfPost, duration);
+				setInterval(() => updateDuration(timeOfPost, duration), 3600);
+
 				profileWrapper.appendChild(duration);
 
 				topRow.appendChild(profileWrapper);

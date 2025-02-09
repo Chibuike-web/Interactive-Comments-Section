@@ -1,6 +1,7 @@
 import { attachStepperEvents } from "./stepper.js";
 import { attachDeleteEvents } from "./delete.js";
 import { attachEditEvents } from "./edit.js";
+import { updateDuration } from "./time.js";
 
 const sendBtn = document.getElementById("send-btn");
 const wrapper = document.getElementById("wrapper");
@@ -97,11 +98,13 @@ const addComment = (e) => {
 	profileWrapper.appendChild(youTag);
 
 	// Duration
-	const duration = document.createElement("div");
-	duration.textContent = " 2 days ago";
+	const timeOfPost = new Date();
+	let duration = document.createElement("div");
 	duration.className = "text-grayishBlue";
-	profileWrapper.appendChild(duration);
+	updateDuration(timeOfPost, duration);
+	setInterval(() => updateDuration(timeOfPost, duration), 3600);
 
+	profileWrapper.appendChild(duration);
 	topRow.appendChild(profileWrapper);
 
 	// Action buttons container
